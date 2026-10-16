@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trans Wave - Transfert d'Argent</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f7fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .app-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: #2b3674;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #707ebe;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2b3674;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e5f2;
+            border-radius: 12px;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #4318ff;
+        }
+
+        .btn-send {
+            width: 100%;
+            padding: 14px;
+            background-color: #4318ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-send:hover {
+            background-color: #3311cc;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #a3aed0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="header">
+            <h1>Trans Wave</h1>
+            <p>Envoyez de l'argent en toute simplicité</p>
+        </div>
+
+        <form id="transferForm">
+            <div class="form-group">
+                <label for="recipient">Numéro du destinataire</label>
+                <input type="tel" id="recipient" placeholder="Ex: +225 07 00 00 00" required>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Montant à envoyer</label>
+                <input type="number" id="amount" placeholder="Ex: 5000" required>
+            </div>
+
+            <div class="form-group">
+                <label for="method">Moyen de paiement</label>
+                <select id="method">
+                    <option value="mobile_money">Mobile Money</option>
+                    <option value="card">Carte Bancaire</option>
+                    <option value="wallet">Portefeuille Trans Wave</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-send">Envoyer maintenant</button>
+        </form>
+
+        <p class="footer-note">Transactions sécurisées par Trans Wave</p>
+    </div>
+
+    <script>
+        document.getElementById('transferForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const recipient = document.getElementById('recipient').value;
+            const amount = document.getElementById('amount').value;
+            alert(`Transfert de ${amount} effectué avec succès vers ${recipient} !`);
+        });
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trans Wave</title>
+<style>
+body{font-family:Arial;background:#f4f7fe;padding:20px}
+.app{max-width:400px;margin:40px auto;background:white;padding:25px;border-radius:20px}
+h1{text-align:center;color:#2b3674}
+p{text-align:center;color:#777}
+label{display:block;margin:15px 0 6px}
+input,select,button{width:100%;padding:13px;border-radius:10px}
+input,select{border:1px solid #ddd}
+button{margin-top:20px;background:#4318ff;color:white;border:0;font-size:16px}
+</style>
+</head>
+<body>
+<div class="app">
+<h1>Trans Wave</h1>
+<p>Envoyez de l'argent en Afrique</p>
+
+<label>Destinataire</label>
+<input id="to" placeholder="+225 07 00 00 00">
+
+<label>Montant</label>
+<input id="amount" type="number" placeholder="5000">
+
+<label>Paiement</label>
+<select id="pay">
+<option>Mobile Money</option>
+<option>Carte bancaire</option>
+<option>Portefeuille Trans Wave</option>
+</select>
+
+<button onclick="send()">Envoyer maintenant</button>
+</div>
+
+<script>
+function send(){
+let to=document.getElementById("to").value;
+let amount=document.getElementById("amount").value;
+if(!to||!amount)return alert("Remplissez les champs.");
+alert("Transfert simulé de "+amount+" FCFA vers "+to);
+}
+</script>
+</body>
+</html>
